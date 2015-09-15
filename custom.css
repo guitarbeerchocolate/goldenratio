@@ -1,0 +1,22 @@
+#rectangle1
+  {
+    background:#3EC9D8;
+    height:10em;
+  }
+  #rectangle2
+  {
+    background:#d8f4f7;
+    width:10em;
+  }
+  #splitWidth
+  {
+    width:10em;
+  }
+  .splitWidthFirst
+  {
+    background:#8accb0;
+  }
+  .splitWidthSecond
+  {
+    background:#fbdd85;
+  }
