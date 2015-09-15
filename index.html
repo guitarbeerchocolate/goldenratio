@@ -8,8 +8,25 @@
     <style>
     #rectangle1
     {
-      background:#3ec9d8;
-      height:20em;
+      background:#3EC9D8;
+      height:10em;
+    }
+    #rectangle2
+    {
+      background:#d8f4f7;
+      width:10em;
+    }
+    #splitWidth
+    {
+      width:10em;
+    }
+    .splitWidthFirst
+    {
+      background:#8accb0;
+    }
+    .splitWidthSecond
+    {
+      background:#fbdd85;
     }
     </style>
     <!--[if lt IE 9]>
@@ -18,15 +35,19 @@
     <![endif]-->
   </head>
   <body>
-    <div id="rectangle1"></div>
-    <hr />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>    
+    <div id="rectangle1"></div><hr />
+    <div id="rectangle2"></div><hr />
+    <div id="splitWidth"></div><hr />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="goldenratio.plugin.js"></script>
     <script>
     (function()
     {
       $('#rectangle1').setGRwidth();
-    });
+      $('#rectangle2').setGRheight();
+      $('#splitWidth').setGRheight();
+      $('#splitWidth').splitWidthToGR();
+    })();
     </script>
   </body>
 </html>
