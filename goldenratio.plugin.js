@@ -1,33 +1,17 @@
-(function( $ ){
-  $.fn.goldenratio = function()
-  {
-    
-  },
-  $.fn.setGRwidth = function()
-  {
-    $(this).width($(this).height()*1.6180);
-  },
-  $.fn.setGRheight = function()
-  {
-    $(this).height($(this).width()/1.6180);
-  },
-  $.fn.splitWidthToGR = function()
-  { 
-    var parentWidth = parseInt($(this).width());
-    var secondDivWidth = parentWidth-(parentWidth/1.6180);
-    
-    var firstDivWidth = parseInt(parentWidth-secondDivWidth);
-    
-    var $firstDiv = $('<div class="splitWidthFirst"/>');
-    var $secondDiv = $('<div class="splitWidthSecond"/>');
-    $secondDiv.width(secondDivWidth);
-    $firstDiv.width(firstDivWidth);
+$.fn.setGoldenRectangle = function()
+{
+  var gr = parseInt(this.height() * 1.6180);
+  this.width(gr);
+  return gr;
+}
 
-    $(this).append($firstDiv);
-    $(this).append($secondDiv);
-  },
-  $.fn.splitHeightToGR = function()
-  {
-    $(this).height($(this).width()/1.6180);
-  }
-})( jQuery );
+$.fn.splitHoriz = function()
+{
+  this.setGoldenRectangle();
+  this.children().eq(0).css('float','left');
+  this.children().eq(1).css('float','left');
+  this.children().eq(0).height(this.height());
+  this.children().eq(0).width(this.height());
+  this.children().eq(1).height(this.height());
+  this.children().eq(1).width(parseInt(this.width() - this.children().eq(0).width()));
+}
